@@ -1,25 +1,3 @@
-:root {
-    --bg-color: #f7f3ea;
-    --text-color: #2f2f2f;
-    --accent: #6b8e5a;
-    --button-bg: #ffffff;
-}
-
-body.dark {
-    --bg-color: #1f2a1f;
-    --text-color: #f4f1e8;
-    --accent: #a3c48c;
-    --button-bg: #2e3b2e;
-}
-
-body {
-    margin: 0;
-    font-family: "Georgia", serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: 0.3s ease;
-}
-
 header {
     text-align: center;
     padding: 60px 20px 30px;
@@ -52,25 +30,6 @@ h1 {
     margin-top: 40px;
 }
 
-.btn {
-    display: inline-block;
-    margin: 15px;
-    padding: 14px 28px;
-    background: var(--button-bg);
-    border-radius: 30px;
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 18px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: 0.2s ease;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    background: var(--accent);
-    color: white;
-}
-
 footer {
     text-align: center;
     padding: 40px;
@@ -80,39 +39,40 @@ footer {
 .chapter-list {
     list-style: none;
     padding: 0;
-    max-width: 600px;
-    margin: 40px auto;
+    max-width: 700px;          /* чуть шире */
+    margin: 50px auto;         /* больше сверху и снизу */
 }
 
 .chapter-list li {
-    margin: 15px 0;
+    margin: 20px 0;            /* чуть больше расстояние между элементами */
 }
 
 .chapter-list a {
     text-decoration: none;
-    color: var(--accent);
+    color: var(--text-color);  /* используем основной цвет текста */
     font-size: 20px;
-    padding: 10px 15px;
+    padding: 14px 30px;        /* больше пространства внутри кнопки */
     display: block;
     background: var(--button-bg);
-    border-radius: 20px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    transition: 0.2s ease;
+    border-radius: 30px;       /* более овальная форма */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.2s ease, transform 0.2s ease;
+    text-align: center;        /* чтобы текст был по центру */
 }
 
 .chapter-list a:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     background: var(--accent);
     color: white;
 }
 
 /* Колонка по центру экрана */
 .chapter-text {
-    max-width: 700px;       /* ширина блока */
-    margin: 50px auto;      /* центр по горизонтали */
+    max-width: 900px;       /* ширина блока */
+    margin: 60px auto;      /* центр по горизонтали */
     padding: 0 20px;
     font-size: 20px;
-    line-height: 1.5;
+    line-height: 1.7;
     text-align: justify;    /* выравниваем текст по ширине */
     text-justify: inter-word; /* корректные переносы слов */
 }
@@ -127,208 +87,181 @@ footer {
     margin: 0 10px;
 }
 
-
-/* Полоска сверху */
-.progress-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: rgba(0,0,0,0.1);
-    z-index: 1000;
+/* ===== Переменные ===== */
+:root {
+    --bg-color: #f7f3ea;
+    --text-color: #2f2f2f;
+    --accent: #6b8e5a;
+    --button-bg: #ffffff;
 }
 
-.progress-bar {
-    height: 100%;
-    width: 0%;
-    background: #ff9800;
-    transition: width 0.1s ease-out;
+body.dark {
+    --bg-color: #1f2a1f;
+    --text-color: #f4f1e8;
+    --accent: #a3c48c;
+    --button-bg: #2e3b2e;
 }
 
-/* Текст процента */
-.progress-text {
-    position: fixed;
-    bottom: 15px;
-    right: 20px;
-    background: rgba(0,0,0,0.6);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 14px;
+/* ===== База ===== */
+body {
+    margin: 0;
+    font-family: "Georgia", serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s ease;
+    padding-top: 6px;
 }
 
-
-
-.story-text {
-    font-family: Georgia, serif;
-    font-size: 18px;
-    line-height: 1.5;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+/* ===== Header ===== */
+.main-header {
+    position: relative;
+    text-align: center;
+    padding: 80px 20px 40px;
 }
 
-/* Варианты шрифтов */
-.font-classic {
-    font-family: Georgia, serif;
+.main-header h1 {
+    font-size: 48px;
+    margin: 0;
 }
 
-.font-comic {
-    font-family: "Comic Sans MS", cursive;
-}
-
-.font-modern {
-    font-family: Arial, sans-serif;
-}
-
-.controls {
+/* Кнопка темы */
+.theme-btn {
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.controls button {
-    background: none;
     border: none;
-    font-size: 18px;
+    background: var(--button-bg);
+    padding: 10px 14px;
+    border-radius: 30px;
     cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.minimalist-font-btn {
-    background: none;        /* Без фона */
-    border: none;            /* Без рамки */
-    font-size: 16px;         /* Размер иконки */
-    font-weight: bold;       /* Чтобы "Aa" выделялось */
-    color: inherit;          /* Наследует цвет текста */
-    cursor: pointer;         /* Курсор-палец */
-    padding: 0;              /* Без лишних отступов */
-    margin-left: 8px;        /* Немного отступ от темы */
-    transition: transform 0.2s;
-}
-
-.minimalist-font-btn:hover {
-    transform: scale(1.2);   /* Лёгкое увеличение при наведении */
-}
-
-.font-icon-btn {
-    width: 24px;
-    height: 24px;
-    background: none;
-    border: 2px solid currentColor; /* рамка тонкая, под цвет темы */
-    border-radius: 4px;            /* слегка закругляем */
-    position: relative;
-    cursor: pointer;
-    padding: 0;
-    margin-left: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s, background 0.2s;
-}
-
-/* маленькие символы Aa внутри кнопки через псевдоэлемент */
-.font-icon-btn::after {
-    content: "Aa";
-    font-size: 12px;
-    font-weight: bold;
-    color: currentColor;
-    line-height: 1;
-}
-
-/* Наведение — лёгкое увеличение и смена фона */
-.font-icon-btn:hover {
-    transform: scale(1.2);
-    background: rgba(0,0,0,0.05); /* на светлой теме */
-}
-
-/* Тёмная тема — подсветка при наведении */
-body.dark .font-icon-btn:hover {
-    background: rgba(255,255,255,0.1);
-}
-
-.font-icon-btn {
-    width: 24px;
-    height: 24px;
-    background: none;
-    border: 2px solid currentColor; /* рамка тонкая, под цвет темы */
-    border-radius: 4px;            /* слегка закругляем */
-    position: relative;
-    cursor: pointer;
-    padding: 0;
-    margin-left: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s, background 0.2s;
-}
-
-/* маленькие символы Aa внутри кнопки через псевдоэлемент */
-.font-icon-btn::after {
-    content: "Aa";
-    font-size: 12px;
-    font-weight: bold;
-    color: currentColor;
-    line-height: 1;
-}
-
-/* Наведение — лёгкое увеличение и смена фона */
-.font-icon-btn:hover {
-    transform: scale(1.2);
-    background: rgba(0,0,0,0.05); /* на светлой теме */
-}
-
-/* Тёмная тема — подсветка при наведении */
-body.dark .font-icon-btn:hover {
-    background: rgba(255,255,255,0.1);
-}
-
-.story-text {
-    line-height: 1.4;
-}
-
-.story-text p {
-    margin-bottom: 14px;
-}
-
-.page-nav {
+/* ===== Кнопки меню ===== */
+.menu-buttons {
     text-align: center;
     margin-top: 40px;
 }
 
-.page-nav {
-    display: flex;
-    justify-content: space-between; /* раздвигаем влево и вправо */
-    align-items: center;
-    margin-top: 50px;
+.btn {
+    display: inline-block;
+    margin: 15px;
+    padding: 14px 30px;
+    background: var(--button-bg);
+    border-radius: 40px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.12);
+    transition: 0.2s ease;
 }
 
-.page-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 50px;
+.btn:hover {
+    transform: translateY(-3px);
+    background: var(--accent);
+    color: white;
 }
 
+/* Блок страниц */
+.page-nav {
+    max-width: 900px;
+    margin: 60px auto 20px auto;
+    display: flex;
+    justify-content: flex-between; /* прижать влево */
+}
+
+/* Если только одна кнопка */
 .page-nav.single {
     justify-content: flex-end;
 }
 
+/* Кнопка назад к главам */
+.chapter-nav {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-nav {
+    max-width: 900px;
+    width: 100%;              /* ВАЖНО */
+    margin: 60px auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
 .page-nav a {
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 14px;
-    border: 1px solid currentColor;
-    border-radius: 6px;
-    transition: 0.2s;
+    flex: 0 0 auto;           /* чтобы кнопки не сжимались */
 }
 
-.page-nav a:hover {
-    background: rgba(0,0,0,0.05);
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: top 0.3s ease;
 }
 
-body.dark .page-nav a:hover {
-    background: rgba(255,255,255,0.1);
+.top-bar.hidden {
+    top: -30px; /* чтобы скрывалась вместе с процентами */
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    position: absolute;
+    right: 10px;
+    top: 8px;          /* чуть ниже полоски */
+    font-size: 14px;
+    color: var(--text-color);
+    background: rgba(255,255,255,0.5);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+    header {
+        padding: 40px 15px 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .chapter-text {
+        max-width: 95%;      /* текст шире по экрану */
+        margin: 40px auto;
+        font-size: 18px;     /* чуть меньше для мобильных */
+        line-height: 1.6;
+        padding: 0 10px;
+    }
+
+    .chapter-nav .btn,
+    .page-nav .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    #themeToggle,
+    #fontToggle {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    
+    .top-bar {
+        height: 6px; /* чуть тоньше на телефоне */
+    }
+
+    .progress-text {
+        font-size: 12px;
+    }
 }
