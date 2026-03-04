@@ -271,65 +271,59 @@ body {
 }
 
 /* Общий стиль чата */
-.chat-box {
-    max-width: 600px;
-    margin: 50px auto 30px;  /* хороший пробел сверху и снизу */
-    padding: 15px;
+.chapter-chat {
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+.chat-messages {
     background: var(--button-bg);
+    padding: 15px;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-height: 300px;   /* фиксированная зона для сообщений */
+    overflow-y: auto;
+    margin-bottom: 10px;
 }
 
-.chat-box p {
-    margin: 0 0 10px;
-    font-size: 16px;
-    color: var(--text-color);
+.chat-input {
+    display: flex;
+    gap: 10px;
 }
 
-.chat-box textarea {
-    width: 100%;
-    height: 80px;
+.chat-input textarea {
+    flex: 1;
+    height: 60px;
     padding: 10px;
     border-radius: 15px;
     border: 1px solid #ccc;
     resize: none;
     font-size: 16px;
-    margin-bottom: 10px;
 }
 
-.chat-box .send-btn {
-    display: inline-block;
+.chat-input .send-btn {
     padding: 10px 20px;
     border-radius: 30px;
     background: var(--accent);
     color: white;
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-    transition: 0.2s ease;
 }
 
-.chat-box .send-btn:hover {
-    transform: translateY(-2px);
-    background: darkgreen;
+/* Тёмная тема */
+body.dark .chat-messages {
+    background: #3b4a3b;
+    color: #f4f1e8;
 }
 
-.chapter-chat {
-    max-width: 700px;
-    margin: 30px auto;
-}
-
-/* Тёмная тема для текстового поля чата */
-body.dark .chat-box textarea {
-    background: #3b4a3b;   /* темный фон */
-    color: #f4f1e8;        /* светлый текст */
+body.dark .chat-input textarea {
+    background: #3b4a3b;
+    color: #f4f1e8;
     border: 1px solid #6b8e5a;
 }
 
-body.dark .chat-box .send-btn {
-    background: #6b8e5a;   /* кнопка тоже немного меняется */
-    color: white;
+body.dark .chat-input .send-btn {
+    background: #6b8e5a;
 }
 
 .map-image {
