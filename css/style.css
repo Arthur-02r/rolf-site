@@ -200,8 +200,8 @@ body {
     left: 0;
     width: 100%;
     height: 6px;
-    background: rgba(0,0,0,0.1);
-    z-index: 1000;
+    background: #ddd;
+    z-index: 999;
     transition: top 0.3s ease;
 }
 
@@ -213,55 +213,51 @@ body {
     width: 0%;
     height: 100%;
     background: var(--accent);
-    transition: width 0.3s ease;
+    transition: width 0.4s ease;
 }
 
 .progress-text {
-    position: absolute;
+    position: fixed;
     right: 10px;
-    top: 8px;          /* чуть ниже полоски */
+    top: 0;          /* чуть ниже полоски */
     font-size: 14px;
     color: var(--text-color);
     background: rgba(255,255,255,0.5);
     padding: 2px 6px;
     border-radius: 4px;
+    z-index: 1000;
 }
 
-/* Адаптив для мобильных */
+/* === Адаптив для телефонов === */
 @media (max-width: 768px) {
-    header {
-        padding: 40px 15px 20px;
-    }
-
-    h1 {
-        font-size: 32px;
-    }
-
     .chapter-text {
-        max-width: 95%;      /* текст шире по экрану */
-        margin: 40px auto;
-        font-size: 18px;     /* чуть меньше для мобильных */
-        line-height: 1.6;
-        padding: 0 10px;
+        font-size: 22px;       /* крупнее текст */
+        line-height: 1.9;
+        padding: 0 15px;
     }
 
-    .chapter-nav .btn,
-    .page-nav .btn {
-        padding: 10px 20px;
-        font-size: 16px;
+    .btn {
+        font-size: 20px;
+        padding: 16px 32px;    /* больше кнопки */
     }
 
-    #themeToggle,
-    #fontToggle {
-        padding: 8px 10px;
-        font-size: 14px;
+    .top-bar {
+        height: 12px;          /* полоска прогресса чуть выше */
+    }
+
+    #progressFill {
+        height: 100%;          /* чтобы заполняла всю высоту полоски */
+    }
+
+    .page-nav .page-btn {
+        padding: 14px 20px;    /* кнопки страниц крупнее */
+    }
+
+    header h1 {
+        font-size: 36px;       /* заголовки под телефоны */
     }
     
-    .top-bar {
-        height: 6px; /* чуть тоньше на телефоне */
-    }
-
     .progress-text {
-        font-size: 12px;
+        front-size: 16px;
     }
 }
