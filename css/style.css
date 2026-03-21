@@ -239,30 +239,30 @@ body {
     }
 
     .chapter-text {
-        font-size: 22px;       /* крупнее текст */
+        font-size: 22px;       
         line-height: 1.4;
         padding: 0 15px;
     }
 
     .btn {
         font-size: 20px;
-        padding: 16px 32px;    /* больше кнопки */
+        padding: 16px 32px;    
     }
 
     .top-bar {
-        height: 12px;          /* полоска прогресса чуть выше */
+        height: 12px;          
     }
 
     #progressFill {
-        height: 100%;          /* чтобы заполняла всю высоту полоски */
+        height: 100%;          
     }
 
     .page-nav .page-btn {
-        padding: 14px 20px;    /* кнопки страниц крупнее */
+        padding: 14px 20px;    
     }
 
     header h1 {
-        font-size: 36px;       /* заголовки под телефоны */
+        font-size: 36px;       
     }
     
     .progress-text {
@@ -281,7 +281,7 @@ body {
     padding: 15px;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    max-height: 300px;   /* фиксированная зона для сообщений */
+    max-height: 300px;   
     overflow-y: auto;
     margin-bottom: 10px;
 }
@@ -333,4 +333,25 @@ body.dark .chat-input .send-btn {
     margin: 30px auto;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* === КНОПКИ МЕНЮ ДЛЯ ТЕЛЕФОНА === */
+@media (max-width: 768px) {
+    
+    .menu-buttons {
+        display: flex;
+        flex-direction: column;   
+        align-items: center;
+        gap: 15px;                
+        padding: 0 20px;
+    }
+
+    .menu-buttons .btn {
+        width: 100%;              
+        max-width: 320px;         
+        text-align: center;
+        font-size: 22px;          
+        padding: 18px 0;          
+        border-radius: 40px;
+    }
 }
